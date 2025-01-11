@@ -48,8 +48,8 @@ public class PaymentServiceImpl implements PaymentService {
     private static List<SalesResponseSalesDto> toSalesResponseSalesDtoList(List<Object[]> salesByDateRange) {
         return salesByDateRange.stream()
                 .map(result -> new SalesResponseSalesDto(
-                        (BigDecimal) result[2],
                         (BigDecimal) result[1],
+                        (BigDecimal) result[2],
                         (Instant) result[0]))
                 .collect(Collectors.toList());
     }
